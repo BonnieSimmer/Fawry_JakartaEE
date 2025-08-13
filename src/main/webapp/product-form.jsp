@@ -11,7 +11,7 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-md navbar-dark"
-             style="background-color: #cbccff">
+             style="background-color: #9495ff">
             <div>
                 <a href="index.jsp" class="navbar-brand">Product Management Web Application</a>
             </div>
@@ -24,6 +24,7 @@
     <div class="container col-md-5">
         <div class="card">
             <div class="card-body">
+                <%--@elvariable id="product" type="com.fawry.StoreManager.Product"--%>
                 <c:if test="${product != null}">
                     <form action="edit" method="post">
                 </c:if>
@@ -52,7 +53,7 @@
                 <fieldset class="form-group">
                     <label for="price">
                         Price
-                        <input type="number" class="form-control" name="price" required="required" value="<c:out value="${product.price}" />">
+                        <input type="number" step="any" class="form-control" name="price" required="required" value="<c:out value="${product.price}" />">
                     </label>
                 </fieldset>
                 <fieldset class="form-group">
