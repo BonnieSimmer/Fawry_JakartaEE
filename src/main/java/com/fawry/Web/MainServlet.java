@@ -26,6 +26,10 @@ public class MainServlet extends HttpServlet {
                 editProduct(request, response);
                 break;
             case "/delete":
+                deleteProduct(request, response);
+                break;
+            default:
+                listProducts(request, response);
                 break;
         }
     }
@@ -37,7 +41,7 @@ public class MainServlet extends HttpServlet {
     private void showAddForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.getRequestDispatcher("product-form.jsp").forward(request, response);
     }
-    private void insertProduct(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    private void insertProduct(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String name = request.getParameter("name");
         double price = Double.parseDouble(request.getParameter("price"));
         int quantity = Integer.parseInt(request.getParameter("quantity"));
@@ -51,7 +55,7 @@ public class MainServlet extends HttpServlet {
         request.setAttribute("product", ProductRepository.getInstance().getProduct(productId));
         request.getRequestDispatcher("product-form.jsp").forward(request, response);
     }
-    private void editProduct(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    private void editProduct(HttpServletRequest request, HttpServletResponse response) throws IOException {
         int productId = Integer.parseInt(request.getParameter("id"));
         String name = request.getParameter("name");
         double price = Double.parseDouble(request.getParameter("price"));
@@ -61,7 +65,7 @@ public class MainServlet extends HttpServlet {
         response.sendRedirect("list");
     }
 
-    private void deleteProduct(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    private void deleteProduct(HttpServletRequest request, HttpServletResponse response) throws IOException {
         int productId = Integer.parseInt(request.getParameter("id"));
         ProductRepository.getInstance().deleteProduct(productId);
         response.sendRedirect("list");
