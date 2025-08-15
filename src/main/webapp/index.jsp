@@ -13,10 +13,10 @@
         <nav class="navbar navbar-expand-md navbar-dark"
              style="background-color: #9495ff">
             <div>
-                <a href="index.jsp" class="navbar-brand">Product Management Web Application</a>
+                <a href="<%=request.getContextPath()%>/" class="navbar-brand">Product Management Web Application</a>
             </div>
             <ul class="navbar-nav">
-                <li><a href="<%=request.getContextPath()%>/list" class="nav-link">Products</a></li>
+                <li><a href="<%=request.getContextPath()%>/" class="nav-link">Products</a></li>
             </ul>
         </nav>
     </header>
