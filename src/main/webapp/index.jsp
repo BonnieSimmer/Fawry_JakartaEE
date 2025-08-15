@@ -22,12 +22,11 @@
     </header>
     <br>
     <div class="row">
-    <!-- <div class="alert alert-success" *ngIf='message'>{{message}}</div> -->
     <div class="container">
         <h3 class="text-center">List of Products</h3>
         <hr>
-        <div class="container text-left">
-            <a href="<%=request.getContextPath()%>/add" class="btn btn-success">Add Product</a>
+        <div class="container d-flex justify-content-end">
+            <a href="<%=request.getContextPath()%>/add" class="btn btn-success"  style="background-color: #9495ff; " >Add Product</a>
         </div>
         <br>
         <table class="table table-bordered">

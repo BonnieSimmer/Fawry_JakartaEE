@@ -53,13 +53,13 @@
                 <fieldset class="form-group">
                     <label for="price">
                         Price
-                        <input type="number" step="any" class="form-control" name="price" required="required" value="<c:out value="${product.price}" />">
+                        <input type="number" step="any" class="form-control" min="1" name="price" required="required" value="<c:out value="${product.price}" />">
                     </label>
                 </fieldset>
                 <fieldset class="form-group">
                    <label for="quantity">
                         Quantity
-                        <input type="number" class="form-control" name="quantity" required="required" value="<c:out value="${product.quantity}" />">
+                        <input type="number" class="form-control" name="quantity" min="1" required="required" value="<c:out value="${product.quantity}" />">
                    </label>
                 </fieldset>
                 <button type="submit" class="btn btn-success">Submit</button>
