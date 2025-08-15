@@ -26,7 +26,7 @@
         <h3 class="text-center">List of Products</h3>
         <hr>
         <div class="container d-flex justify-content-end">
-            <a href="<%=request.getContextPath()%>/add" class="btn btn-success"  style="background-color: #9495ff; " >Add Product</a>
+            <a href="<%=request.getContextPath()%>/add" class="btn btn-success" style="background-color: #9495ff">Add Product</a>
         </div>
         <br>
         <table class="table table-bordered">
@@ -40,6 +40,7 @@
             </tr>
             </thead>
             <tbody>
+            <%--@elvariable id="products" type="com.fawry.StoreManager.Product"--%>
             <c:forEach var="product" items="${products}">
 
                 <tr>
